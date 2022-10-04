@@ -1,4 +1,4 @@
-S#,Country,Latitute ,Longitute,Daily_Oil_Consumption_(Barrels),World Share,Yearly Gallons Per Capita,Price Per Gallon (USD),Price Per Liter (USD),Price Per Liter (PKR),GDP Per Capita ( USD ),Gallons GDP Per Capita Can Buy,xTimes Yearly Gallons Per Capita Buy
+S#,Country,Latitute ,Longitute,Daily_Oil_Consumption,World Share,Yearly Gallons Per Capita,Price Per Gallon (USD),Price Per Liter (USD),Price Per Liter (PKR),GDP Per Capita ( USD ),Gallons GDP Per Capita Can Buy,xTimes Yearly Gallons Per Capita Buy
 1,United States,37.09024,-95.712891,"19,687,287",20%,934.3,5.19,1.37,289.97,"63,414","12,218",13
 2,China,35.86166,104.195397,"12,791,553",13%,138.7,5.42,1.43,302.87,"10,435","1,925",14
 3,India,20.593684,78.96288,"4,443,000",5%,51.4,5.05,1.33,281.93,"1,901",376,7
