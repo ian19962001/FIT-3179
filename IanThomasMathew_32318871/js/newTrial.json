@@ -50,7 +50,7 @@
             "title": "Magnitude",
             "scale": {
               "type": "threshold",
-              "domain": [5.5, 6, 6.5, 7],
+              "domain": [0, 1, 2, 3],
               "range": ["#fdbe85", "#fd8d3c", "#e6550d","#bd0026", "#7f0000"]
             }
           },
