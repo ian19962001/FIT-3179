@@ -22,23 +22,23 @@
           "lookup": "properties.NAME",
           "from": {
             "data": {
-              "url": "https://raw.githubusercontent.com/ian19962001/FIT-3179/main/IanThomasMathew_32318871/data/Petrol%20Dataset%20June%2023%202022%20--%20Version%202.csv"
+              "url": "https://raw.githubusercontent.com/ian19962001/FIT-3179/main/IanThomasMathew_32318871/data/Petrol%20Dataset%20June%2020%202022%20FINAL%20IAN.csv"
             },
             "key": "Country",
-            "fields": ["Price Per Liter (USD)"]
+            "fields": ["Daily Oil Consumption (Barrels)"]
           }
         }
       ],
       "mark": {"type": "geoshape", "stroke": "black"},
       "encoding": {
         "color": {
-          "field": "Price Per Liter (USD)", 
+          "field": "Daily Oil Consumption (Barrels)", 
           "type": "quantitative",
           "scale": {"type": "linear"}
         },
         "tooltip": [
           {"field": "properties.NAME", "type": "nominal", "title": "Country"},
-          {"field": "Price Per Liter (USD)", "type": "quantitative"}
+          {"field": "Daily Oil Consumption (Barrels)", "type": "quantitative"}
         ]
       }
     }
