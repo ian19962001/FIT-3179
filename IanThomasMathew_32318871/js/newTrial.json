@@ -40,7 +40,7 @@
         "mark": {"type": "geoshape", "fill": null,"stroke":"lightgray"}
       },
       {
-        // "transform": [{"filter": {"param": "time_brush"}}],
+        "transform": [{"filter": {"param": "time_brush"}}],
         "encoding": {
           "longitude": {"field": "LONGITUDE", "type":"quantitative"},
           "latitude": {"field": "LATITUDE", "type":"quantitative"},
@@ -71,7 +71,7 @@
   "descending"}]
             },
             {"filter": "datum.ranking == 1"},
-            {"calculate": "'The worst earthquake of; the selected period: ' + datum['TS_INTENSITY']","as": "text_annotation_raw"
+            {"calculate": "'The worst Tsuanami was: ' + datum['TS_INTENSITY']","as": "text_annotation_raw"
               },
               {
                   "calculate": "split(datum.text_annotation_raw,';')",
@@ -95,8 +95,8 @@
         {
           "width": "container",
           "height": 60,
-          "mark": "line",
-          "title": "Use this line chart to filter out the data based on time",
+          "mark": "area",
+          "title": "This chart represents the intensity of Tsunami's on Japan",
           "params": [
             {
               "name": "time_brush",
@@ -107,14 +107,30 @@
             "x": {
               "field": "YEAR",
               "timeUnit": "yearmonth",
-              "axis": {"title": "", "format": "%Y"}
+                  "scale": {"domain": {"param": "time_brush"}},
+              "axis": {"title": "", "tickCount": 5, "grid": false}
             },
             "y": {
-              "aggregate": "count",
-              "axis": {"tickCount": 3, "grid": false},
-              "title": "Count"
+              "field": "TS_INTENSITY",
+              "type": "quantitative"
+            },
+            "color":{
+              "field":"COUNTRY",
+              "type": "nominal",
+              "scale": {
+                "range": ["#fdbe85", "#fd8d3c", "#e6550d",
+  "#bd0026", "#7f0000"]
+              },
+            "legend": null
             }
-          }
+            
+          },"transform": [{
+  "filter": {
+    "field": "COUNTRY",
+    "equal": "JAPAN"
+  }
+}]
+          
         },
         {
           "width": "container",
@@ -122,7 +138,7 @@
             {
               "bin": {"step": 0.5, "extent": [5, 7]},
               "field": "YEAR",
-              "as": "magnitude"
+              "as": "Year"
             }
           ],
           "mark": "area",
@@ -133,9 +149,9 @@
               "scale": {"domain": {"param": "time_brush"}},
               "axis": {"title": "", "tickCount": 5, "grid": false}
   },
-            "y": {"aggregate": "count", "title": "Count of Earthquakes"},
+            "y": {"aggregate": "count", "title": "Count Of Tsuanmi's"},
             "color": {
-              "field": "magnitude",
+              "field": "Year",
               "scale": {
                 "range": ["#fdbe85", "#fd8d3c", "#e6550d",
   "#bd0026", "#7f0000"]
