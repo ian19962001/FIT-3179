@@ -7,7 +7,7 @@
     {
       "width": "container",
       "height": 300,
-      "title": "Tsunami's",
+      "title": "Tsunami's affect areas around the world ",
       "projection": {"type": "equalEarth"},
       "layer": [
         {
@@ -138,7 +138,7 @@
           },
           "legend": null
         }
-      }
+ }
     }
   ],
   "config": {"title": {"font": "sans-serif", "fontSize": 14}}
