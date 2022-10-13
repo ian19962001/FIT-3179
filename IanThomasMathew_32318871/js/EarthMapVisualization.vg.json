@@ -1,0 +1,84 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": "container",
+    "height": 400,
+    "title": "Tsuanmi's that have occurred around the world",
+    "projection": {"type":"equalEarth"},
+    "layer": [
+        {
+            "data":{
+                "url":"https://raw.githubusercontent.com/ian19962001/FIT-3179/main/IanThomasMathew_32318871/js/ne_110m_admin_0_countries.topojson",
+                "format":{"type":"topojson","feature":"ne_110m_admin_0_countries"}
+            },
+            "mark": {"type": "geoshape", "fill":"white"}
+        },
+        {
+            "data": {
+                "url": "https://raw.githubusercontent.com/ian19962001/FIT-3179/main/IanThomasMathew_32318871/js/ocean_map.topojson",
+                "format": {"type": "topojson", "feature": "oceans"}
+        },
+        "mark": {"type": "geoshape", "fill": "skyblue"}
+        },
+        {
+            "data": {
+                "url": "https://raw.githubusercontent.com/ian19962001/FIT-3179/main/IanThomasMathew_32318871/js/WorldMapWithGraticules.topojson",
+                "format": {"type": "topojson", "feature": "ne_110m_graticules_30"}
+              },
+              "mark": {"type": "geoshape", "fill": null, "stroke": "lightgray"}
+        },
+        {
+            "data":{
+                "url":"https://raw.githubusercontent.com/ian19962001/FIT-3179/main/IanThomasMathew_32318871/data/tsunami_dataset.csv"
+            },
+            "encoding": {
+                "longitude": {"field": "LONGITUDE", "type": "quantitative"},
+                "latitude": {"field": "LATITUDE", "type": "quantitative"},
+                "color": {
+                  "field": "TS_INTENSITY",
+                  "type": "quantitative",
+                  "title": "Magnitude",
+                  "scale": {
+                    "type": "threshold",
+                    "domain": [0, 1, 2, 3],
+                    "range": ["#fdbe85", "#fd8d3c", "#e6550d", "#bd0026", "#7f0000"]
+                  }
+                },
+                "tooltip": [
+                  {"field": "YEAR", "type": "temporal"},
+                  {"field": "TS_INTENSITY", "type": "quantitative"},
+                  {"field": "COUNTRY", "type": "nominal"}
+                ]
+              },"layer": [
+                {"mark": {"type": "circle", "opacity": 0.4, "size": 15}},
+                {
+                  "transform": [
+                    {
+                      "window": [{"op": "rank", "as": "ranking"}],
+                      "sort": [{"field": "TS_INTENSITY", "order": "descending"}]
+                    },
+                    {"filter": "datum.ranking == 1"},
+                    {
+                      "calculate": "'The worst Tsuanami was: ' + datum['TS_INTENSITY']",
+                      "as": "text_annotation_raw"
+                    },
+                    {
+                      "calculate": "split(datum.text_annotation_raw,';')",
+                      "as": "text_annotation"
+                    }
+                  ],
+                  "mark": {
+                    "type": "text",
+                    "align": "right",
+                    "dx": -8,
+                    "dy": -8,
+                    "baseline": "middle",
+                    "fontStyle": "italic"
+                  },
+                  "encoding": {"text": {"field": "text_annotation"}}
+                }
+              ]
+
+        }
+        
+    ]
+}
