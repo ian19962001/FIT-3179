@@ -9,9 +9,7 @@
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
 
   <!-- Import pure.css -->
-  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
-    integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 
   <!-- Google font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,25 +21,37 @@
 </head>
 
 <body>
+  <img
+  src="https://github.com/ian19962001/FIT-3179/blob/main/IanThomasMathew_32318871/data/tsunami%20img.jpg"
+  alt="Tsuanmi img"
+  class="pt-3"
+  width="100px"
+  height="100px"
+  />
   <h1 class="title"><b>Tsuanmi's</b> impact around the <b>World</b></h1>
   <div id="vis1" class="map-chart"></div>
   <p>The map represent the areas which were affected by Tsuanmi's</p>
+  <div class="float-container">
 
+      <div id="vis2" class="float-child"></div>
+    
+      <div id="vis3" class="float-child"></div>
+  </div>
 </body>
 
 
 
   <script type="text/javascript">
     var map = "https://raw.githubusercontent.com/ian19962001/FIT-3179/main/IanThomasMathew_32318871/js/EarthMapVisualization.vg.json";
-    var specVis2 = "https://raw.githubusercontent.com/ian19962001/FIT-3179/main/IanThomasMathew_32318871/js/number_of_deaths.vg.json";
+    var bubblechart = "https://raw.githubusercontent.com/ian19962001/FIT-3179/main/IanThomasMathew_32318871/js/number_of_deaths.vg.json";
 
     vegaEmbed('#vis1', map, { "actions": false });
 
-    vegaEmbed('#vis2', specVis2, { "actions": false }).then(function (result) {
+    vegaEmbed('#vis2', bubblechart, { "actions": false }).then(function (result) {
       // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     }).catch(console.error);
 
-    vegaEmbed('#vis3', specVis1, { "actions": false }).then(function (result) {
+    vegaEmbed('#vis3', bubblechart, { "actions": false }).then(function (result) {
       // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     }).catch(console.error);
 
