@@ -76,9 +76,7 @@
                   },
                   "encoding": {"text": {"field": "text_annotation"}}
                 }
-              ]
-
+            ]
         }
-        
     ]
 }
