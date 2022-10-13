@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "height": 700,
+    "height": 300,
     "width": "container",
     "data": {
       "url": "https://raw.githubusercontent.com/ian19962001/FIT-3179/main/IanThomasMathew_32318871/data/Tsunamis_2.csv"

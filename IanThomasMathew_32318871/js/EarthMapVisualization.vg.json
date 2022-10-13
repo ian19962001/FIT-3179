@@ -36,7 +36,7 @@
                 "color": {
                   "field": "TS_INTENSITY",
                   "type": "quantitative",
-                  "title": "Magnitude",
+                  "title": "Intensity",
                   "scale": {
                     "type": "threshold",
                     "domain": [0, 1, 2, 3],
