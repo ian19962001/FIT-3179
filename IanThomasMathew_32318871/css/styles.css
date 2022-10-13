@@ -1,8 +1,71 @@
-#symbol_map {
-	top:100px;
-	bottom: 100px; 
-	left: 100px;
-	right: 100px;
-	/*height: 1000px;
-	width: 800px;*/
+h1 {
+	background-color: white;
+	font: "Georgia";
+	font-size: 36px;
+	text-align: center;
+}
+
+.row {
+	height: auto;
+	display: flex;
+}
+
+.column {
+	max-height: fit-content;
+	width: auto;
+	align-items: center;
+	justify-content: space-around;
+	/* float: left;
+	margin: 0 auto; */
+}
+
+.container {
+	display: flex;
+}
+
+.container.space-around {
+	justify-content: space-around;
+}
+
+.container.space-between {
+	justify-content: space-between;
+}
+
+.map-chart {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: fit-content;
+	/* border: 3px solid green; */
+	width: 60%;
+	margin-left: 20%;
+	margin-right: 20%;
+	margin-bottom: 10px;
+	margin-top: 30px;
+}
+
+p {
+	font-size: larger;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font: 'Segoe UI';
+	margin-left: 20%;
+	margin-right: 20%;
+}
+
+.small_chart.three {
+	height: auto;
+	width: fit-content;
+	/* border: 1px solid #000; */
+	margin-left: 20px;
+}
+
+.div {
+	background-color: red;
+	color: white;
+	border: 1px solid;
+}
+
+h2{
+	text-align: center;
+	font-size: 26px;
 }
