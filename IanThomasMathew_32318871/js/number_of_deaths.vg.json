@@ -6,7 +6,7 @@
     "layer": [
         {
             "data":{"url":"https://raw.githubusercontent.com/ian19962001/FIT-3179/main/IanThomasMathew_32318871/data/Tsunamis_2.csv"},
-            "mark":"circle",
+            "mark":{"type":"circle","size":100},
             "transform":[{"filter": {"field": "DEATHS", "gte": 1000}},
             {"filter": {"field": "DEATHS", "lt": 10000}}],
             "encoding": {
