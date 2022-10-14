@@ -7,7 +7,7 @@
         {
             "data":{"url":"https://raw.githubusercontent.com/ian19962001/FIT-3179/main/IanThomasMathew_32318871/data/Tsunamis_2.csv"},
             "mark":{"type":"circle","size":200},
-            "transform":[{"filter": {"field": "DEATHS", "gte": 1000}},
+            "transform":[{"filter": {"field": "HOUSES_DESTROYED", "gte": 1000}},
             {
         "filter": {
           "oneOf":["JAPAN"],
@@ -17,11 +17,11 @@
             ],
             "encoding": {
                 "x":{"field": "YEAR","type": "temporal"},
-                "y":{"field":"DEATHS","type":"quantitative"},
+                "y":{"field":"HOUSES_DESTROYED","type":"quantitative"},
                 "color":{"field":"COUNTRY","type":"nominal"},
                 "tooltip":[
                     {"field":"COUNTRY","type":"nominal"},   
-                    {"field":"DEATHS", "type":"quantitative"},
+                    {"field":"HOUSES_DESTROYED", "type":"quantitative"},
                     {"field":"YEAR","type":"temporal"}
                 ]
                 }
