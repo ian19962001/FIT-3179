@@ -18,6 +18,9 @@ h1 {
 	/* float: left;
 	margin: 0 auto; */
 }
+.vis-container {
+	width: 100%;
+  }
 
 .container {
 	display: flex;
@@ -85,3 +88,11 @@ h2{
 .background-color{
 	background-color: #89CFF0;
 }
+
+.pure-g {
+	margin-bottom: 40px;
+}
+
+.description-left {
+	padding-right: 20px;
+  }
