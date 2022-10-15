@@ -1,5 +1,5 @@
 h1 {
-	background-color: white;
+	background-color: #89CFF0;
 	font: "Georgia";
 	font-size: 36px;
 	text-align: center;
@@ -95,4 +95,30 @@ h2{
 
 .description-left {
 	padding-right: 20px;
+  }
+
+img {
+display: block;
+max-width: 100%;
+}
+
+.description-right {
+	padding-left: 20px;
+  }
+
+
+.body-japan {
+	background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Flag_of_Japan_%281870%E2%80%931999%29.svg/220px-Flag_of_Japan_%281870%E2%80%931999%29.svg.png");
+}
+
+.center {
+	align-items: center;
+	width: 50%;
+	border: 3px solid green;
+	padding: 10px;
+  }
+
+  .description h2,
+  h1 {
+	margin-top: 0px;
   }
