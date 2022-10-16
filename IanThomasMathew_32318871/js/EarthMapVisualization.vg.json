@@ -61,7 +61,7 @@
                   },
                   {"filter": "datum.ranking == 1"},
                   {
-                    "calculate": "'The worst Tsuanami was: ' + datum['TS_INTENSITY']",
+                    "calculate": "'The worst Tsuanami had an intensity of ' + datum['TS_INTENSITY']",
                     "as": "text_annotation_raw"
                   },
                   {

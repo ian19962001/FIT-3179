@@ -1,47 +1,57 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "height": 300,
-    "width": "container",
-    "background": "#89CFF0",
-    "data": {
-      "url": "https://raw.githubusercontent.com/ian19962001/FIT-3179/main/IanThomasMathew_32318871/data/Tsunamis_2.csv"
-    },
-    "layer": [
-      {"transform":[{"filter": {"field": "HOUSES_DESTROYED", "gte": 1000}}
-              ],
-        "mark": {"type": "bar", "size": 10},
-        "params": [
-          {"name": "brush", "select": {"type": "interval", "encodings": ["y"]}}
-        ],
-        "encoding": {
-          "y": {
-            "field": "HOUSES_DESTROYED",
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "height": 300,
+  "width": "container",
+  "background": "#89CFF0",
+  "data": {
+    "url": "https://raw.githubusercontent.com/ian19962001/FIT-3179/main/IanThomasMathew_32318871/data/Tsunamis_2.csv"
+  },
+  "layer": [
+    {"transform": [
+  {
+    "aggregate": [
+      {"op": "sum", "field": "HOUSES_DESTROYED", "as": "total_sum"}],
+    "groupby": ["COUNTRY"]
+  },
+  {
+    "window": [{"op": "row_number", "as": "rank"}],
+    "sort": [{"field": "total_sum", "order": "descending"}]
+  },
+  {"filter": "datum.rank <9"}
+], 
+      "mark": {"type": "bar", "size": 10},
+      "params": [
+        {"name": "brush", "select": {"type": "interval", "encodings": ["y"]}}
+      ],
+      "encoding": {
+        "y": {
+          "field": "total_sum",
+          "type":"quantitative",
+          "title": "Number of houses destroyed"
+        },
+        "x": {
+          "field": "COUNTRY",
+          "type": "nominal",
+          "title": "Name of Country"
+        },
+        "color": {
+          "field": "COUNTRY",
+          "title": "Region",
+          "scale": {
+            "scheme": "category10",
+            "range": ["#9568bd", "#e377c2", "#bcbd22", "#17becf"]
+          }
+        },
+        "opacity": {"condition": {"param": "brush", "value": 1}, "value": 0.9},
+        "tooltip": [
+          {"field": "COUNTRY", "type": "nominal"},
+          {
+            "field": "total_sum", 
             "type": "quantitative",
-            "title": "Number of houses destroyed"
-          },
-          "x": {
-            "field": "COUNTRY",
-            "type": "nominal",
-            "title": "Name of Country:"
-          },
-          "color": {
-            "field": "COUNTRY",
-            "title": "Region",
-            "scale": {
-              "scheme": "category10",
-              "range": ["#9568bd", "#e377c2", "#bcbd22", "#17becf"]
-            }
-          },
-          "opacity": {"condition": {"param": "brush", "value": 1}, "value": 0.3},
-          "tooltip": [
-            {"field": "COUNTRY", "type": "nominal"},
-            {
-              "field": "HOUSES_DESTROYED",
-              "type": "quantitative",
-              "title": "Houses Destroyed"
-            }
-          ]
-        }
-      }    
-    ]
-  }
+            "title": "Houses Destroyed"
+          }
+        ]
+      }
+    }    
+  ]
+}
