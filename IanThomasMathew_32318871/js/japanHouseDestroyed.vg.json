@@ -18,7 +18,7 @@
             ],
             "encoding": {
                 "x":{"field": "YEAR","type": "temporal"},
-                "y":{"field":"HOUSES_DESTROYED","type":"quantitative"},
+                "y":{"field":"HOUSES_DESTROYED","type":"quantitative","title":"Number Of Houses Destroyed"},
                 "color":{"field":"COUNTRY","type":"nominal"},
                 "tooltip":[
                     {"field":"COUNTRY","type":"nominal"},   
