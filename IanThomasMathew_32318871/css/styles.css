@@ -51,8 +51,7 @@ p {
 	font-size: larger;
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	font: 'Segoe UI';
-	margin-left: 20%;
-	margin-right: 20%;
+	text-align: center;
 }
 
 .small_chart.two {
@@ -70,7 +69,7 @@ p {
 
 h2{
 	text-align: center;
-	font-size: 26px;
+	font-size: 20px;
 }
 
 .float-container {
@@ -87,6 +86,12 @@ h2{
 
 .background-color{
 	background-color: #89CFF0;
+}
+.background-color1{
+	background-color: #501B1d;
+}
+.background-color2{
+	background-color: #83677B;
 }
 
 .pure-g {
@@ -108,7 +113,8 @@ h2{
 }
 
 .center {
-	text-align: center;
+	padding: 70px 0;
+	text-align: center;;
   }
 
   .description h2,
