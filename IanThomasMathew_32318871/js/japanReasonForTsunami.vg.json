@@ -2,6 +2,7 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "width": 780,
     "height": 230,
+    "background": "#89CFF0",
     "data": {"url": "https://raw.githubusercontent.com/ian19962001/FIT-3179/main/IanThomasMathew_32318871/data/tsunami_dataset.csv"},
     "mark": "bar",
       "transform":[

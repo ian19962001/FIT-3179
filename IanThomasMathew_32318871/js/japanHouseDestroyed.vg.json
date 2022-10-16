@@ -3,6 +3,7 @@
     "title":"Number of death by Tsunamis",
     "width": "container",
     "height":300,
+    "background": "#89CFF0",
     "layer": [
         {
             "data":{"url":"https://raw.githubusercontent.com/ian19962001/FIT-3179/main/IanThomasMathew_32318871/data/Tsunamis_2.csv"},
