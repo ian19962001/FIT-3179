@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title":"Number of death by Tsunamis",
+    "title":"Number of houses destroyed by Tsunamis",
     "width": "container",
     "height":300,
     "background": "#89CFF0",
@@ -22,7 +22,7 @@
                 "color":{"field":"COUNTRY","type":"nominal"},
                 "tooltip":[
                     {"field":"COUNTRY","type":"nominal"},   
-                    {"field":"HOUSES_DESTROYED", "type":"quantitative"},
+                    {"field":"HOUSES_DESTROYED", "type":"quantitative","title":"HOUSES DESTROYED"},
                     {"field":"YEAR","type":"temporal"}
                 ]
                 }
